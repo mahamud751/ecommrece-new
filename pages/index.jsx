@@ -327,7 +327,7 @@ export default function Home(props) {
                   }"
             >
               <div className="swiper-wrapper row cols-lg-4 cols-md-3 cols-sm-2 cols-1">
-                {props.recentAllBlog.map((user) => (
+                {props.getAllBlog.data.map((user) => (
                   <div className="swiper-slide post text-center overlay-zoom">
                     <figure className="brand">
                       <img src={"https://baybridgebd.com/upload/" + user.img} alt="Brand" width={85} height={48} />
@@ -345,7 +345,7 @@ export default function Home(props) {
                       <h4 className="post-description">
                         <a href="description">{user.shortDis}</a>
                       </h4>
-                      <Link href="/blog-details">
+                      <Link href="/blog-details/[blogId]" as={`/blog-details/${user.id}`}>
                         <a>
                           {" "}
                           <a href="">Read more</a>
@@ -434,6 +434,8 @@ export async function getServerSideProps(context) {
 
   const { data: getAllBrand } = await axios.get(process.env.API_URL + "/GetInformationSingle/categoryBrand&chk=1");
 
+  const { data: getAllBlog } = await axios.get(process.env.API_URL + "/GetInformationSingle/blog&chk=1");
+
   const { data: recentItem } = await axios.get(process.env.API_URL + "/api/ev1/RecentProduct");
 
   const { data: recentAllBlog } = await axios.get(process.env.API_URL + "/api/ev1/RecentAllBlog");
@@ -445,6 +447,6 @@ export async function getServerSideProps(context) {
   // const { data: getCatagoryWiseProductShow } = await axios.get(process.env.API_URL + "/api/ev1/CategoryAllProduct/" + id);
 
   return {
-    props: { getCatagory, getAllBrand, getCatagoryWisieProduct, recentItem, recentAllBlog, getVendorInfo },
+    props: { getCatagory, getAllBrand, getAllBlog, getCatagoryWisieProduct, recentItem, recentAllBlog, getVendorInfo },
   };
 }

@@ -381,11 +381,16 @@ function blogDetails(props) {
 // }
 
 export async function getServerSideProps(context) {
-  const id = context.params["brand-wise-product"];
+  const id = context.params.blogId;
 
-  const { data: getCatagoryWiseProductShow } = await axios.get(process.env.API_URL + "/api/ev1/SubCategoryBrandProduct/" + id);
+  const { data } = await axios.get("https://baybridgebd.com/api/ev1/SingleProductDetails/" + id);
+
+  const { data: getAllBlog } = await axios.get(process.env.API_URL + "/GetInformationSingle/blog&chk=1");
+
+  const { data: recentAllBlog } = await axios.get(process.env.API_URL + "/api/ev1/RecentAllBlog");
+
   return {
-    props: { getCatagoryWiseProductShow },
+    props: { data, getAllBlog, recentAllBlog },
   };
 }
 

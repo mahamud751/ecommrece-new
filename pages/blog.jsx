@@ -106,9 +106,7 @@ function blog(props) {
                           <a href="#">Fashion</a>,<a href="#">Technology</a>
                         </div>
                         <h4 className="post-title">
-                          <a href="post-single.html">Fusce lacinia arcuet nulla</a>
-                        </h4>
-                        <div className="post-content">
+                          <a href="post-single.html">Fusce lacinia arcuet nullblog-details
                           <p>
                             Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Suspendisse
                             potenti.Sed egstas, ant at vulputate volutpat, uctus metus libero eu augue, vitae luctus…
