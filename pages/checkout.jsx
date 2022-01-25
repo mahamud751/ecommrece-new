@@ -6,7 +6,7 @@ import fromValueUpdate from "../commonFunction/onChangeHandle";
 import useScript from "../commonFunction/ReloadJs";
 function checkout() {
   useScript("/assets/js/main.min.js");
-  const [product, upadateProductState] = useState("");
+  const [userInformation, upadateProductState] = useState("");
   const categoryHandleChange = (e) => {
     fromValueUpdate(e, upadateProductState);
   };
@@ -16,9 +16,17 @@ function checkout() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const jsdlkf = { product: product, cartInfo: cartInfo, productInfo: productInfo };
+
+    const NewUser = e.target.NewUser.value;
+    const orderTypes = e.target.orderTypes.value;
+
+    var newData = { ...userInformation, NewUser: NewUser, orderType: orderTypes };
+
+    const jsdlkf = { userInfo: newData, cartInfo: cartInfo, productInfo: productInfo };
+    console.log(jsdlkf);
+
     const response = await axios
-      .post("http://localhost:4000/api/ev1/ShoppingCartOrder", jsdlkf)
+      .post("http://192.168.0.102:4000/api/ev1/ShoppingCartOrder", jsdlkf)
       .then((response) => {
         // MySwal.fire("Good job!", "Product added successfully", "success");
       })
@@ -62,6 +70,8 @@ function checkout() {
                       </div>
                     </div>
                   </div>
+                  <input type="hidden" className="form-control form-control-md" onClick={onSubmit} name="orderTypes" value="order" required />
+                  <input type="hidden" className="form-control form-control-md" onClick={onSubmit} name="NewUser" value="NewUser" required />
                   <div className="form-group">
                     <label>Country / Region *</label>
                     <div className="select-box">
@@ -80,8 +90,6 @@ function checkout() {
                     <label>Street address *</label>
                     <input type="text" className="form-control mb-2" name="streetaddress" onChange={categoryHandleChange} required />
                   </div>
-
-                  <input type="text" className="form-control mb-2" name="cartState[]" value={cartInfo} onChange={categoryHandleChange} required />
 
                   <div className="row gutter-sm">
                     <div className="col-md-6">
@@ -126,10 +134,10 @@ function checkout() {
                         <option value="default" selected="selected">
                           Select outlet
                         </option>
-                        <option value="uk">United Kingdom (UK)</option>
-                        <option value="us">United States</option>
-                        <option value="fr">France</option>
-                        <option value="aus">Australia</option>
+                        <option value="11">United Kingdom (UK)</option>
+                        <option value="11">United States</option>
+                        <option value="11">France</option>
+                        <option value="11">Australia</option>
                       </select>
                     </div>
                   </div>

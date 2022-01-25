@@ -30,15 +30,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/blog-details/[blogId]": [
+    "/checkout": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/blog-details/[blogId].js"
+      "static/chunks/pages/checkout.js"
     ],
-    "/outlet/[outletId]": [
+    "/product-details/[productId]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/outlet/[outletId].js"
+      "static/chunks/pages/product-details/[productId].js"
     ]
   },
   "ampFirstPages": []
