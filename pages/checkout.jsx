@@ -26,7 +26,7 @@ function checkout() {
     console.log(jsdlkf);
 
     const response = await axios
-      .post("http://192.168.0.102:4000/api/ev1/ShoppingCartOrder", jsdlkf)
+      .post(process.env.API_URL + "/api/ev1/ShoppingCartOrder", jsdlkf)
       .then((response) => {
         // MySwal.fire("Good job!", "Product added successfully", "success");
       })
