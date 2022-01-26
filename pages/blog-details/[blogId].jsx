@@ -7,6 +7,8 @@ import useScript from "../../commonFunction/ReloadJs";
 function blogDetails(props) {
   useScript("/assets/js/main.min.js");
 
+  const proDetails = props.data[0];
+
   const [cart, setCart] = useRecoilState(cartState);
   const [productCartInfo, updateProductCartInfo] = useRecoilState(addToCartProductInfo);
 
@@ -353,32 +355,6 @@ function blogDetails(props) {
     </div>
   );
 }
-
-// export const getStaticPaths = async () => {
-//   const { data } = await axios.get("https://baybridgebd.com/GetAllProduct");
-//   const paths = data?.map((current) => {
-//     return {
-//       params: {
-//         categoryId: current?.id?.toString(),
-//       },
-//     };
-//   });
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// };
-
-// export async function getStaticProps(context) {
-//   const id = context.params.categoryId;
-
-//   const { data: getCatagoryWiseProductShow } = await axios.get("https://baybridgebd.com/api/ev1/CategoryAllProduct/" + id);
-
-//   return {
-//     props: { getCatagoryWiseProductShow },
-// revalidate: 1,
-//   };
-// }
 
 export async function getServerSideProps(context) {
   const id = context.params.blogId;

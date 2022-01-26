@@ -6,6 +6,7 @@ import { addToCartProductInfo, cartState } from "../../atom/addTocartAtom";
 import useScript from "../../commonFunction/ReloadJs";
 function singleProductView(props) {
   useScript("/assets/js/main.min.js");
+
   const proDetails = props.data[0];
   const [cart, setCart] = useRecoilState(cartState);
   const [productCartInfo, updateProductCartInfo] = useRecoilState(addToCartProductInfo);
@@ -1682,7 +1683,7 @@ export async function getServerSideProps(context) {
   const id = context.params.productId;
 
   const { data: getCatagoryWisieProduct } = await axios.get(process.env.API_URL + "/api/ev1/GetCategoryWishProduct");
-  const { data } = await axios.get("https://baybridgebd.com/api/ev1/SingleProductDetails/" + id);
+  const { data } = await axios.get(process.env.API_URL + "/api/ev1/SingleProductDetails/" + id);
 
   const { data: recentItem } = await axios.get(process.env.API_URL + "/api/ev1/RecentProduct");
 

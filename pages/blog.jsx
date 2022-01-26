@@ -95,38 +95,6 @@ function blog(props) {
                       </article>
                     ))}
 
-                    <article className="post post-list post-listing mb-md-10 mb-6 pb-2 overlay-zoom mb-2">
-                      <figure className="post-media br-sm">
-                        <a href="post-single.html">
-                          <img src="assets/images/blog/classic/6.jpg" width={930} height={500} alt="blog" />
-                        </a>
-                      </figure>
-                      <div className="post-details">
-                        <div className="post-cats text-primary">
-                          <a href="#">Fashion</a>,<a href="#">Technology</a>
-                        </div>
-                        <h4 className="post-title">
-                          <a href="post-single.html">Fusce lacinia arcuet nullblog-details
-                          <p>
-                            Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Suspendisse
-                            potenti.Sed egstas, ant at vulputate volutpat, uctus metus libero eu augue, vitae luctus…
-                          </p>
-                          <a href="post-single.html" className="btn btn-link btn-primary">
-                            (read more)
-                          </a>
-                        </div>
-                        <div className="post-meta">
-                          by{" "}
-                          <a href="#" className="post-author">
-                            John Doe
-                          </a>
-                          -{" "}
-                          <a href="#" className="post-date">
-                            03.05.2021
-                          </a>
-                        </div>
-                      </div>
-                    </article>
                     <ul className="pagination justify-content-center">
                       <li className="prev disabled">
                         <a href="#" aria-label="Previous" tabIndex={-1} aria-disabled="true">

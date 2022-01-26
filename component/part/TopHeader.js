@@ -14,7 +14,7 @@ function TopHeader() {
     try {
       const fetchData = async () => {
         const result = await axios.get(
-          "https://baybridgebd.com/GetInformationSingle/category&chk=1"
+          process.env.API_URL + "/GetInformationSingle/category&chk=1"
         );
         // console.log(result.data)
         setCategory(result.data.data);
@@ -26,7 +26,7 @@ function TopHeader() {
     try {
       const fetchCategorySubBrand = async () => {
         const result = await axios.get(
-          "https://baybridgebd.com/GetCategoryData"
+          process.env.API_URL + "/GetCategoryData"
         );
         setCategorySubBrand(result.data);
       };
