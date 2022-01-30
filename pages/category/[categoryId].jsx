@@ -61,7 +61,7 @@ function categoryWiseProduct(props) {
             <div className="shop-default-banner banner d-flex align-items-center mb-5 br-xs">
               {props.getCatagory.data.map((item, index) => (
                 <div>
-                  <img src={"https://baybridgebd.com/upload/" + item.desktopicon} alt="Brand" height={200} />
+                  <img src={"https://baybridgebd.com/upload/" + item.brandicon} alt="Brand" style={{ width: "800px", height: "400px" }} />
                   <div className="banner-content">
                     <h4 className="banner-subtitle font-weight-bold"> {item.title} Collection</h4>
 
