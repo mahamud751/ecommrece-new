@@ -1,7 +1,5 @@
 import axios from "axios";
 import React from "react";
-import { useRecoilState } from "recoil";
-import { addToCartProductInfo, cartState } from "../../atom/addTocartAtom";
 import useScript from "../../commonFunction/ReloadJs";
 function blogDetails(props) {
   useScript("/assets/js/main.min.js");
@@ -9,8 +7,8 @@ function blogDetails(props) {
   const proDetails = props.data;
   console.log(proDetails);
 
-  const [cart, setCart] = useRecoilState(cartState);
-  const [productCartInfo, updateProductCartInfo] = useRecoilState(addToCartProductInfo);
+  // const [cart, setCart] = useRecoilState(cartState);
+  // const [productCartInfo, updateProductCartInfo] = useRecoilState(addToCartProductInfo);
 
   return (
     <div>
@@ -56,7 +54,7 @@ function blogDetails(props) {
                   <a href="demo1.html">Home</a>
                 </li>
                 <li>
-                  <a href="blog.html">Blog</a>
+                  <a href="blog.html"></a>
                 </li>
                 <li>Blog Single</li>
               </ul>
@@ -87,9 +85,7 @@ function blogDetails(props) {
                           <span>0</span>Comments
                         </a>
                       </div>
-                      <h2 className="post-title">
-                        <a href="#">{proDetails.title}ssssssssssssss</a>
-                      </h2>
+                      <p>{proDetails.shortDis}sssssss</p>
                       <div className="post-content">
                         <p>
                           Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Suspendisse potenti.
@@ -487,7 +483,7 @@ function blogDetails(props) {
                                         </a>
                                       </div>
                                       <h4 className="post-title">
-                                        <a href="post-single.html">{proDetails.title}</a>
+                                        <a href="post-single.html"></a>
                                       </h4>
                                     </div>
                                   </div>
@@ -1726,16 +1722,10 @@ function blogDetails(props) {
 export async function getServerSideProps(context) {
   const id = context.params.blogId;
 
-  const { data } = await axios.get("https://jsonplaceholder.typicode.com/posts/" + id);
-
-  const { data: getAllBlog } = await axios.get(process.env.API_URL + "/GetInformationSingle/blog&chk=1");
-
-  const { data: recentAllBlog } = await axios.get(process.env.API_URL + "/api/ev1/RecentAllBlog");
-
-  const { data: getCatagoryWiseProductShow } = await axios.get("https://jsonplaceholder.typicode.com/posts/" + id);
+  const { data } = await axios.get(process.env.API_URL + "/GetInformationSingle/blog&id=" + id);
 
   return {
-    props: { data, getAllBlog, recentAllBlog, getCatagoryWiseProductShow },
+    props: { data },
   };
 }
 

@@ -1440,7 +1440,7 @@ export async function getServerSideProps(context) {
 
   const { data: recentItem } = await axios.get(process.env.API_URL + "/api/ev1/RecentProduct");
 
-  const { data: recentAllBlog } = await axios.get("https://jsonplaceholder.typicode.com/posts");
+  const { data: recentAllBlog } = await axios.get(process.env.API_URL + "/api/ev1/RecentAllBlog");
 
   const { data: getVendorInfo } = await axios.get(process.env.API_URL + "/GetVendorInfo");
 
