@@ -85,12 +85,9 @@ function blogDetails(props) {
                           <span>0</span>Comments
                         </a>
                       </div>
-                      <p>{proDetails.shortDis}sssssss</p>
+                      <p>{proDetails.data[0].tittle} sssssss</p>
                       <div className="post-content">
-                        <p>
-                          Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Suspendisse potenti.
-                          Sed egstas, ant at vulputate volutpat, uctus metus libero eu augue, vitae luctus metus libero eu augue.{" "}
-                        </p>
+                        <p>{proDetails.data[0].shortDis}</p>
                         <p>
                           Morbi purus libero, faucibus adi piscing, com modo quis, gravida iest. Sed lectus. Praesent elementum hendrerit tortor. Sed semper
                           lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. pede arcu,

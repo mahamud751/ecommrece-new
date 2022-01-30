@@ -30,11 +30,6 @@
       "static/chunks/main.js",
       "static/chunks/pages/blog.js"
     ],
-    "/blog-details": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/blog-details.js"
-    ],
     "/blog-details/[blogId]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
