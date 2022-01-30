@@ -481,7 +481,7 @@ function Home(props) {
                                                                                     as: `/product-details/${item1.id}`,
                                                                                     children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
                                                                                         children: /*#__PURE__*/ jsx_runtime_.jsx("img", {
-                                                                                            src: "http://192.168.1.13:4000" + "/upload/" + JSON.parse(item1.img),
+                                                                                            src: "https://baybridgebd.com" + "/upload/" + JSON.parse(item1.img),
                                                                                             alt: "Product",
                                                                                             width: 295,
                                                                                             height: 335
@@ -774,14 +774,14 @@ function Home(props) {
 //   };
 // }
 async function getServerSideProps(context) {
-    const { data: getCatagory  } = await external_axios_default().get("http://192.168.1.13:4000" + "/GetInformationSingle/category&chk=1");
-    const { data: getCatagoryWisieProduct  } = await external_axios_default().get("http://192.168.1.13:4000" + "/api/ev1/GetCategoryWishProduct");
+    const { data: getCatagory  } = await external_axios_default().get("https://baybridgebd.com" + "/GetInformationSingle/category&chk=1");
+    const { data: getCatagoryWisieProduct  } = await external_axios_default().get("https://baybridgebd.com" + "/api/ev1/GetCategoryWishProduct");
     console.log(getCatagoryWisieProduct);
-    const { data: getAllBrand  } = await external_axios_default().get("http://192.168.1.13:4000" + "/GetInformationSingle/categoryBrand&chk=1");
-    const { data: getAllBlog  } = await external_axios_default().get("http://192.168.1.13:4000" + "/GetInformationSingle/blog&chk=1");
-    const { data: recentItem  } = await external_axios_default().get("http://192.168.1.13:4000" + "/api/ev1/RecentProduct");
-    const { data: recentAllBlog  } = await external_axios_default().get("http://192.168.1.13:4000" + "/api/ev1/RecentAllBlog");
-    const { data: getVendorInfo  } = await external_axios_default().get("http://192.168.1.13:4000" + "/GetVendorInfo");
+    const { data: getAllBrand  } = await external_axios_default().get("https://baybridgebd.com" + "/GetInformationSingle/categoryBrand&chk=1");
+    const { data: getAllBlog  } = await external_axios_default().get("https://baybridgebd.com" + "/GetInformationSingle/blog&chk=1");
+    const { data: recentItem  } = await external_axios_default().get("https://baybridgebd.com" + "/api/ev1/RecentProduct");
+    const { data: recentAllBlog  } = await external_axios_default().get("https://baybridgebd.com" + "/api/ev1/RecentAllBlog");
+    const { data: getVendorInfo  } = await external_axios_default().get("https://baybridgebd.com" + "/GetVendorInfo");
     // const id = context.params.categoryId;
     // const { data: getCatagoryWiseProductShow } = await axios.get(process.env.API_URL + "/api/ev1/CategoryAllProduct/" + id);
     return {

@@ -781,8 +781,8 @@ function blogDetails(props) {
 async function getServerSideProps(context) {
     const id = context.params.blogId;
     const { data  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://baybridgebd.com/api/ev1/SingleProductDetails/" + id);
-    const { data: getAllBlog  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://192.168.1.13:4000" + "/GetInformationSingle/blog&chk=1");
-    const { data: recentAllBlog  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://192.168.1.13:4000" + "/api/ev1/RecentAllBlog");
+    const { data: getAllBlog  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://baybridgebd.com" + "/GetInformationSingle/blog&chk=1");
+    const { data: recentAllBlog  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://baybridgebd.com" + "/api/ev1/RecentAllBlog");
     return {
         props: {
             data,

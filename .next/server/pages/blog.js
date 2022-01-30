@@ -3193,12 +3193,12 @@ function blog(props) {
     }));
 }
 async function getServerSideProps(context) {
-    const { data: getCatagory  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://192.168.1.13:4000" + "/GetInformationSingle/category&chk=1");
-    const { data: getCatagoryWisieProduct  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://192.168.1.13:4000" + "/api/ev1/GetCategoryWishProduct");
-    const { data: getAllBrand  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://192.168.1.13:4000" + "/GetInformationSingle/categoryBrand&chk=1");
-    const { data: recentItem  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://192.168.1.13:4000" + "/api/ev1/RecentProduct");
-    const { data: recentAllBlog  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://192.168.1.13:4000" + "/api/ev1/RecentAllBlog");
-    const { data: getVendorInfo  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://192.168.1.13:4000" + "/GetVendorInfo");
+    const { data: getCatagory  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://baybridgebd.com" + "/GetInformationSingle/category&chk=1");
+    const { data: getCatagoryWisieProduct  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://baybridgebd.com" + "/api/ev1/GetCategoryWishProduct");
+    const { data: getAllBrand  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://baybridgebd.com" + "/GetInformationSingle/categoryBrand&chk=1");
+    const { data: recentItem  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://baybridgebd.com" + "/api/ev1/RecentProduct");
+    const { data: recentAllBlog  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://baybridgebd.com" + "/api/ev1/RecentAllBlog");
+    const { data: getVendorInfo  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://baybridgebd.com" + "/GetVendorInfo");
     return {
         props: {
             getCatagory,

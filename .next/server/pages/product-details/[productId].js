@@ -439,7 +439,7 @@ function singleProductView(props) {
                                                                                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                                                                                         href: "product-default.html",
                                                                                                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
-                                                                                                            src: "http://192.168.1.13:4000" + "/upload/" + JSON.parse(item1.img),
+                                                                                                            src: "https://baybridgebd.com" + "/upload/" + JSON.parse(item1.img),
                                                                                                             alt: "Product",
                                                                                                             style: {
                                                                                                                 width: "100px",
@@ -2913,7 +2913,7 @@ function singleProductView(props) {
                                                                                                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                                                                                             href: "product-default.html",
                                                                                                             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
-                                                                                                                src: "http://192.168.1.13:4000" + "/upload/" + JSON.parse(item1.img),
+                                                                                                                src: "https://baybridgebd.com" + "/upload/" + JSON.parse(item1.img),
                                                                                                                 alt: "Product",
                                                                                                                 style: {
                                                                                                                     width: "100px",
@@ -3019,9 +3019,9 @@ function singleProductView(props) {
 // }
 async function getServerSideProps(context) {
     const id = context.params.productId;
-    const { data: getCatagoryWisieProduct  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://192.168.1.13:4000" + "/api/ev1/GetCategoryWishProduct");
-    const { data  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://192.168.1.13:4000" + "/api/ev1/SingleProductDetails/" + id);
-    const { data: recentItem  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://192.168.1.13:4000" + "/api/ev1/RecentProduct");
+    const { data: getCatagoryWisieProduct  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://baybridgebd.com" + "/api/ev1/GetCategoryWishProduct");
+    const { data  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://baybridgebd.com" + "/api/ev1/SingleProductDetails/" + id);
+    const { data: recentItem  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://baybridgebd.com" + "/api/ev1/RecentProduct");
     return {
         props: {
             data,

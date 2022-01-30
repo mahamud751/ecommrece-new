@@ -58,22 +58,20 @@ function categoryWiseProduct(props) {
             {/* Start of Shop Banner */}
             <dir></dir>
 
-            <div
-              className="shop-default-banner banner d-flex align-items-center mb-5 br-xs"
-              style={{
-                backgroundImage: "url(assets/images/shop/banner1.jpg)",
-                backgroundColor: "#FFC74E",
-              }}
-            >
-              <img src={"https://baybridgebd.com/upload/" + AllProductInfo.brandicon} alt="Brand" width={85} height={48} />
-              <div className="banner-content">
-                <h4 className="banner-subtitle font-weight-bold">Accessories Collection</h4>
-                <h3 className="banner-title text-white text-uppercase font-weight-bolder ls-normal">Smart Wrist Watches</h3>
-                <a href="shop-banner-sidebar.html" className="btn btn-dark btn-rounded btn-icon-right">
-                  Discover Now
-                  <i className="w-icon-long-arrow-right" />
-                </a>
-              </div>
+            <div className="shop-default-banner banner d-flex align-items-center mb-5 br-xs">
+              {props.getCatagory.data.map((item, index) => (
+                <div>
+                  <img src={"https://baybridgebd.com/upload/" + item.desktopicon} alt="Brand" height={200} />
+                  <div className="banner-content">
+                    <h4 className="banner-subtitle font-weight-bold"> {item.title} Collection</h4>
+
+                    <a href="shop-banner-sidebar.html" className="btn btn-dark btn-rounded btn-icon-right">
+                      {item.title}
+                      <i className="w-icon-long-arrow-right" />
+                    </a>
+                  </div>
+                </div>
+              ))}
             </div>
 
             <div className="shop-content row gutter-lg mb-10">
@@ -390,10 +388,11 @@ function categoryWiseProduct(props) {
 export async function getServerSideProps(context) {
   const id = context.params.categoryId;
 
+  const { data: getCatagory } = await axios.get(process.env.API_URL + "/GetInformationSingle/category&chk=1");
   const { data: getCatagoryWiseProductShow } = await axios.get(process.env.API_URL + "/api/ev1/CategoryAllProduct/" + id);
 
   return {
-    props: { getCatagoryWiseProductShow },
+    props: { getCatagory, getCatagoryWiseProductShow },
   };
 }
 

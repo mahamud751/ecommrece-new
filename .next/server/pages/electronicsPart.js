@@ -732,7 +732,7 @@ function electronicsPart(props) {
                                                                                                                     as: `/product-details/${item1.id}`,
                                                                                                                     children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
                                                                                                                         children: /*#__PURE__*/ jsx_runtime_.jsx("img", {
-                                                                                                                            src: "http://192.168.1.13:4000" + "/upload/" + JSON.parse(item1.img),
+                                                                                                                            src: "https://baybridgebd.com" + "/upload/" + JSON.parse(item1.img),
                                                                                                                             alt: "Product",
                                                                                                                             style: {
                                                                                                                                 width: "400px",
@@ -927,9 +927,9 @@ function electronicsPart(props) {
     }));
 }
 async function getServerSideProps(context) {
-    const { data: getCatagory  } = await external_axios_default().get("http://192.168.1.13:4000" + "/GetInformationSingle/category&chk=1");
-    const { data: getCatagoryWisieProduct  } = await external_axios_default().get("http://192.168.1.13:4000" + "/api/ev1/GetCategoryWishProduct");
-    const { data: getAllBrand  } = await external_axios_default().get("http://192.168.1.13:4000" + "/GetInformationSingle/categoryBrand&chk=1");
+    const { data: getCatagory  } = await external_axios_default().get("https://baybridgebd.com" + "/GetInformationSingle/category&chk=1");
+    const { data: getCatagoryWisieProduct  } = await external_axios_default().get("https://baybridgebd.com" + "/api/ev1/GetCategoryWishProduct");
+    const { data: getAllBrand  } = await external_axios_default().get("https://baybridgebd.com" + "/GetInformationSingle/categoryBrand&chk=1");
     return {
         props: {
             getCatagory,

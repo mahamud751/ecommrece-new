@@ -157,43 +157,41 @@ function categoryWiseProduct(props) {
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("dir", {
                             }),
-                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                 className: "shop-default-banner banner d-flex align-items-center mb-5 br-xs",
-                                style: {
-                                    backgroundImage: "url(assets/images/shop/banner1.jpg)",
-                                    backgroundColor: "#FFC74E"
-                                },
-                                children: [
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
-                                        src: "https://baybridgebd.com/upload/" + AllProductInfo.brandicon,
-                                        alt: "Brand",
-                                        width: 85,
-                                        height: 48
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: "banner-content",
+                                children: props.getCatagory.data.map((item, index)=>/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                         children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h4", {
-                                                className: "banner-subtitle font-weight-bold",
-                                                children: "Accessories Collection"
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
+                                                src: "https://baybridgebd.com/upload/" + item.desktopicon,
+                                                alt: "Brand",
+                                                height: 200
                                             }),
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
-                                                className: "banner-title text-white text-uppercase font-weight-bolder ls-normal",
-                                                children: "Smart Wrist Watches"
-                                            }),
-                                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
-                                                href: "shop-banner-sidebar.html",
-                                                className: "btn btn-dark btn-rounded btn-icon-right",
+                                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                                className: "banner-content",
                                                 children: [
-                                                    "Discover Now",
-                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("i", {
-                                                        className: "w-icon-long-arrow-right"
+                                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h4", {
+                                                        className: "banner-subtitle font-weight-bold",
+                                                        children: [
+                                                            " ",
+                                                            item.title,
+                                                            " Collection"
+                                                        ]
+                                                    }),
+                                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
+                                                        href: "shop-banner-sidebar.html",
+                                                        className: "btn btn-dark btn-rounded btn-icon-right",
+                                                        children: [
+                                                            item.title,
+                                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("i", {
+                                                                className: "w-icon-long-arrow-right"
+                                                            })
+                                                        ]
                                                     })
                                                 ]
                                             })
                                         ]
                                     })
-                                ]
+                                )
                             }),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                 className: "shop-content row gutter-lg mb-10",
@@ -814,9 +812,11 @@ function categoryWiseProduct(props) {
 // }
 async function getServerSideProps(context) {
     const id = context.params.categoryId;
-    const { data: getCatagoryWiseProductShow  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://192.168.1.13:4000" + "/api/ev1/CategoryAllProduct/" + id);
+    const { data: getCatagory  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://baybridgebd.com" + "/GetInformationSingle/category&chk=1");
+    const { data: getCatagoryWiseProductShow  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://baybridgebd.com" + "/api/ev1/CategoryAllProduct/" + id);
     return {
         props: {
+            getCatagory,
             getCatagoryWiseProductShow
         }
     };

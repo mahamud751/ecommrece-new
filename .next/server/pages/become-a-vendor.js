@@ -195,7 +195,7 @@ function becomeAVendor(props) {
     }));
 }
 async function getServerSideProps(context) {
-    const { data: vendor  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://192.168.1.13:4000" + "/GetVendorInfo");
+    const { data: vendor  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://baybridgebd.com" + "/GetVendorInfo");
     return {
         props: {
             vendor

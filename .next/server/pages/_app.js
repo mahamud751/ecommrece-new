@@ -1956,7 +1956,7 @@ function TopHeader() {
     (0,external_react_.useEffect)(()=>{
         try {
             const fetchData = async ()=>{
-                const result = await external_axios_default().get("http://192.168.1.13:4000" + "/GetInformationSingle/category&chk=1");
+                const result = await external_axios_default().get("https://baybridgebd.com" + "/GetInformationSingle/category&chk=1");
                 // console.log(result.data)
                 setCategory(result.data.data);
             };
@@ -1965,7 +1965,7 @@ function TopHeader() {
         }
         try {
             const fetchCategorySubBrand = async ()=>{
-                const result = await external_axios_default().get("http://192.168.1.13:4000" + "/GetCategoryData");
+                const result = await external_axios_default().get("https://baybridgebd.com" + "/GetCategoryData");
                 setCategorySubBrand(result.data);
             };
         } catch (error1) {

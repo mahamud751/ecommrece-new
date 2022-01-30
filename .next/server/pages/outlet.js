@@ -174,7 +174,7 @@ function outlet1(props) {
     }));
 }
 async function getServerSideProps(context) {
-    const { data: outlet  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://192.168.1.13:4000" + "/api/ev1/AllOutlet");
+    const { data: outlet  } = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://baybridgebd.com" + "/api/ev1/AllOutlet");
     return {
         props: {
             outlet
